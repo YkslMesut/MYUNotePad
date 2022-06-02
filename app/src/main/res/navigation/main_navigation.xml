@@ -14,7 +14,12 @@
         android:id="@+id/editNoteFragment"
         android:name="com.mesutyukselusta.myunotepad.view.EditNoteFragment"
         android:label="fragment_edit_note"
-        tools:layout="@layout/fragment_edit_note" />
+        tools:layout="@layout/fragment_edit_note" >
+        <argument
+            android:name="uuid"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
     <fragment
         android:id="@+id/notepadFeedFragment"
         android:name="com.mesutyukselusta.myunotepad.view.NotepadFeedFragment"

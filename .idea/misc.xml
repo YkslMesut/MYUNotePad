@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_create_notepad.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_edit_note.xml" value="0.15989583333333332" />
+        <entry key="app/src/main/res/layout/fragment_notepad_feed.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/row_note.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/menu/feed_note_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -7,9 +7,9 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Note(
-    @ColumnInfo(name = "note")
-    @SerializedName("note")
-    var note : String,
+    @ColumnInfo(name = "note_desc")
+    @SerializedName("note_desc")
+    var note_desc: String,
     @ColumnInfo(name = "note_title")
     @SerializedName("note_title")
     var note_title : String,

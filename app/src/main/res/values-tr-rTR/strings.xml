@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MYUNotePad</string>
+    <string name="add_note">Not Ekle</string>
+    <string name="enter_title">Başlığı giriniz</string>
+    <string name="enter_note">Notunuzu Giriniz</string>
+    <string name="save">Kaydet</string>
+</resources>
