@@ -1,18 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="50dp">
-    <TextView
-        android:id="@+id/noteTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/noteDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/noteCreationDay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="false"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/noteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="16dp"
+                android:fontFamily="@font/autour_one"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_margin="10dp"
+                android:textSize="12dp"
+                android:fontFamily="@font/fugaz_one"
+                android:id="@+id/noteDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/noteCreationDate"
+                    android:layout_width="wrap_content"
+                    android:visibility="visible"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/fugaz_one"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </LinearLayout>

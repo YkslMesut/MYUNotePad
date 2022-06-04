@@ -38,8 +38,8 @@ class NoteAdapter(private val noteList : ArrayList<Note>): RecyclerView.Adapter<
         var uuid : Int = 0
         fun bind(note: Note) {
             itemBinding.noteTitle.text = note.note_title
-            itemBinding.noteDesc.text = note.note_desc.take(30)
-            itemBinding.noteCreationDay.text = note.note_creation_date
+            itemBinding.noteDesc.text = note.note_desc.take(50)
+            itemBinding.noteCreationDate.text = note.note_creation_date
             uuid = note.uuid
         }
         init{

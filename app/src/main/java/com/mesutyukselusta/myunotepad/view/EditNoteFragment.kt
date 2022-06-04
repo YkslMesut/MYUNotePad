@@ -46,6 +46,8 @@ class EditNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setToolbarView()
+
         viewModel = ViewModelProvider(this).get(EditNoteViewModel::class.java)
 
         arguments?.let {
@@ -56,7 +58,6 @@ class EditNoteFragment : Fragment() {
 
         }
 
-
         binding.btnUpdate.setOnClickListener {
             if (selectedNote != null) {
                 val  noteTitle = (binding.etNoteTitle.text.toString())
@@ -64,6 +65,15 @@ class EditNoteFragment : Fragment() {
                 viewModel.updateNote(selectedNote,noteTitle,noteDesc)
                 observeLiveData()
             }
+        }
+
+        binding.toolbar.btnDelete.setOnClickListener {
+            viewModel.deleteNoteFromRoom(uuid)
+            observeLiveData()
+        }
+
+        binding.toolbar.btnBack.setOnClickListener {
+            NavHostFragment.findNavController(this@EditNoteFragment).navigateUp()
         }
 
     }
@@ -74,15 +84,20 @@ class EditNoteFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        viewModel.noteLiveData.observe(viewLifecycleOwner, Observer {note->
+        viewModel.noteLiveData.observe(viewLifecycleOwner) { note ->
             selectedNote = note
             updateView(note)
-        })
-        viewModel.updateControl.observe(viewLifecycleOwner, Observer {
-            if (it){
+        }
+        viewModel.updateControl.observe(viewLifecycleOwner) {
+            if (it) {
                 NavHostFragment.findNavController(this@EditNoteFragment).navigateUp()
             }
-        })
+        }
+        viewModel.deleteControl.observe(viewLifecycleOwner) {
+            if (it) {
+                NavHostFragment.findNavController(this@EditNoteFragment).navigateUp()
+            }
+        }
     }
 
     private fun updateView(note : Note){
@@ -95,5 +110,10 @@ class EditNoteFragment : Fragment() {
 
     }
 
+    private fun setToolbarView(){
+        binding.toolbar.toolbarTitle.text = resources.getText(R.string.edit_note)
+        binding.toolbar.btnBack.visibility = View.VISIBLE
+        binding.toolbar.btnDelete.visibility = View.VISIBLE
+    }
 
 }

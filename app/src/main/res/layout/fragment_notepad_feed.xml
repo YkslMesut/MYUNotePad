@@ -7,11 +7,14 @@
     android:background="@color/note_background"
     android:layout_height="match_parent"
     tools:context=".view.NotepadFeedFragment">
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
     <androidx.appcompat.widget.SearchView
         android:id="@+id/payer_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="@font/autour_one"
         android:background="@color/white"
         android:textCursorDrawable="@null"
         app:iconifiedByDefault="false"

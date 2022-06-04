@@ -44,8 +44,9 @@ class CreateNotepadFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(CreateNoteViewModel::class.java)
+        setToolbarView()
 
+        viewModel = ViewModelProvider(this).get(CreateNoteViewModel::class.java)
 
         binding.btnSave.setOnClickListener {
             takeInfoFromView()
@@ -53,6 +54,11 @@ class CreateNotepadFragment : Fragment() {
             Log.d(TAG, "btnSave: ")
             observeLiveData()
         }
+
+        binding.toolbar.btnBack.setOnClickListener {
+            NavHostFragment.findNavController(this@CreateNotepadFragment).navigateUp()
+        }
+
 
     }
 
@@ -76,4 +82,8 @@ class CreateNotepadFragment : Fragment() {
 
     }
 
+    private fun setToolbarView(){
+        binding.toolbar.toolbarTitle.text = resources.getText(R.string.add_note)
+        binding.toolbar.btnBack.visibility = View.VISIBLE
+    }
 }

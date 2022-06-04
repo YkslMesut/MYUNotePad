@@ -11,6 +11,7 @@ class EditNoteViewModel(application: Application) : BaseViewModel(application) {
 
     val noteLiveData = MutableLiveData<Note>()
     val updateControl = MutableLiveData<Boolean>()
+    val deleteControl = MutableLiveData<Boolean>()
 
     fun getNote(uuid: Int) {
         launch {
@@ -33,6 +34,13 @@ class EditNoteViewModel(application: Application) : BaseViewModel(application) {
             }
         } else {
         updateControl.value = false
+        }
+    }
+
+    fun deleteNoteFromRoom(uuid : Int){
+        launch {
+            NoteDatabase(getApplication()).noteDao().deleteNote(uuid)
+            updateControl.value = true
         }
     }
 }

@@ -2,10 +2,11 @@ package com.mesutyukselusta.myunotepad.view
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,7 +34,6 @@ class NotepadFeedFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true);
 
     }
 
@@ -49,6 +49,8 @@ class NotepadFeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setToolbarView()
 
         viewModel = ViewModelProvider(this).get(NoteFeedViewModel::class.java)
         viewModel.getAllNotesFromRoom()
@@ -70,6 +72,11 @@ class NotepadFeedFragment : Fragment() {
 
         })
 
+        binding.toolbar.btnAdd.setOnClickListener {
+            val action = NotepadFeedFragmentDirections.actionNotepadFeedFragmentToCreateNotepadFragment()
+            Navigation.findNavController(requireView()).navigate(action)
+        }
+
     }
 
     private fun observeLiveData() {
@@ -86,7 +93,8 @@ class NotepadFeedFragment : Fragment() {
 
     private fun adapterView(){
 
-        _binding!!.recyclerView.layoutManager = LinearLayoutManager(context)
+
+        _binding!!.recyclerView.layoutManager = GridLayoutManager(context,2)
         _binding!!.recyclerView.adapter = noteAdapter
 
         val swipeGesture = object : SwipeGesture(requireContext()){
@@ -116,26 +124,15 @@ class NotepadFeedFragment : Fragment() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.feed_note_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-
-        if (id == R.id.add_note){
-            val action = NotepadFeedFragmentDirections.actionNotepadFeedFragmentToCreateNotepadFragment()
-            Navigation.findNavController(requireView()).navigate(action)
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
-
 
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setToolbarView(){
+        binding.toolbar.toolbarTitle.text = resources.getText(R.string.my_note)
+        binding.toolbar.btnAdd.visibility = View.VISIBLE
     }
 }
