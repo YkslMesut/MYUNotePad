@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/note_background"
     android:layout_height="match_parent"
-    tools:context=".view.EditNoteFragment">
+    tools:context=".view.CreateNotepadFragment">
 
+    <EditText
+        android:id="@+id/etNoteTitle"
+        android:layout_margin="10dp"
+        android:hint="@string/enter_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
-</FrameLayout>
+    <EditText
+        android:layout_margin="10dp"
+        android:id="@+id/etNoteDesc"
+        android:hint="@string/enter_note"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"/>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:text="@string/update"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="50dp"/>
+</LinearLayout>

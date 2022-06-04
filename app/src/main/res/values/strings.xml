@@ -6,4 +6,7 @@
     <string name="enter_title">Enter Title</string>
     <string name="enter_note">Enter Your Note</string>
     <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="my_note">My Notes</string>
+    <string name="edit_note">Edit Note</string>
 </resources>

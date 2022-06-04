@@ -8,23 +8,23 @@
     <fragment
         android:id="@+id/createNotepadFragment"
         android:name="com.mesutyukselusta.myunotepad.view.CreateNotepadFragment"
-        android:label="fragment_create_notepad"
+        android:label="@string/add_note"
         tools:layout="@layout/fragment_create_notepad" />
     <fragment
         android:id="@+id/editNoteFragment"
         android:name="com.mesutyukselusta.myunotepad.view.EditNoteFragment"
-        android:label="fragment_edit_note"
-        tools:layout="@layout/fragment_edit_note" >
+        android:label="@string/edit_note"
+        tools:layout="@layout/fragment_edit_note">
         <argument
             android:name="uuid"
-            app:argType="integer"
-            android:defaultValue="-1" />
+            android:defaultValue="-1"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/notepadFeedFragment"
         android:name="com.mesutyukselusta.myunotepad.view.NotepadFeedFragment"
-        android:label="fragment_notepad_feed"
-        tools:layout="@layout/fragment_notepad_feed" >
+        android:label="@string/my_note"
+        tools:layout="@layout/fragment_notepad_feed">
         <action
             android:id="@+id/action_notepadFeedFragment_to_editNoteFragment"
             app:destination="@id/editNoteFragment" />

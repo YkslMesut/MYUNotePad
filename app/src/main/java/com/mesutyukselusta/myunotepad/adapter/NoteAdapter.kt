@@ -35,14 +35,16 @@ class NoteAdapter(private val noteList : ArrayList<Note>): RecyclerView.Adapter<
 
     class NoteViewHolder(private val itemBinding: RowNoteBinding,listener : onItemClickListener) : RecyclerView.ViewHolder(itemBinding.root) {
         @SuppressLint("SetTextI18n")
+        var uuid : Int = 0
         fun bind(note: Note) {
             itemBinding.noteTitle.text = note.note_title
-            itemBinding.noteDesc.text = note.note_title.take(30)
+            itemBinding.noteDesc.text = note.note_desc.take(30)
             itemBinding.noteCreationDay.text = note.note_creation_date
+            uuid = note.uuid
         }
         init{
             itemView.setOnClickListener {
-                listener.onItemClick(2)
+                listener.onItemClick(uuid)
             }
         }
     }

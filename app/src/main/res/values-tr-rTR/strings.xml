@@ -5,4 +5,7 @@
     <string name="enter_title">Başlığı giriniz</string>
     <string name="enter_note">Notunuzu Giriniz</string>
     <string name="save">Kaydet</string>
+    <string name="update">Güncelle</string>
+    <string name="my_note">Notlarım</string>
+    <string name="edit_note">Notumu Düzenle</string>
 </resources>

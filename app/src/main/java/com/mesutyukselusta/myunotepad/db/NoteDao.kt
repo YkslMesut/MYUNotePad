@@ -22,7 +22,7 @@ interface NoteDao {
 
 
     @Update(entity = Note::class)
-    suspend fun updateNote(payerInfo: Note)
+    suspend fun updateNote(note: Note)
 
 
 }
