@@ -41,7 +41,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="@color/white"
-                android:fontFamily="@font/fugaz_one"
+                android:fontFamily="@font/inknut_antiqua_semibold"
                 android:hint="@string/enter_title" />
 
         </LinearLayout>
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:backgroundTint="@color/white"
-                android:fontFamily="@font/fugaz_one"
+                android:fontFamily="@font/inknut_antiqua_semibold"
                 android:gravity="start"
                 android:hint="@string/enter_note" />
 
@@ -92,7 +92,7 @@
         android:layout_height="75dp"
         android:layout_gravity="center"
         android:backgroundTint="#FF5722"
-        android:fontFamily="@font/autour_one"
+        android:fontFamily="@font/source_serif_pro_semibold"
         android:text="@string/update"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

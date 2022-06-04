@@ -28,28 +28,28 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textSize="16dp"
-                android:fontFamily="@font/autour_one"
+                android:fontFamily="@font/source_serif_pro_semibold"
                 android:textColor="@color/black" />
             <TextView
                 android:layout_margin="10dp"
                 android:textSize="12dp"
-                android:fontFamily="@font/fugaz_one"
+                android:fontFamily="@font/inknut_antiqua_semibold"
                 android:id="@+id/noteDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-                <TextView
-                    android:id="@+id/noteCreationDate"
-                    android:layout_width="wrap_content"
-                    android:visibility="visible"
-                    android:layout_gravity="start"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:fontFamily="@font/fugaz_one"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/noteCreationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/source_serif_pro_semibold"
+                android:textSize="12dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </LinearLayout>

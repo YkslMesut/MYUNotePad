@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:fontFamily="@font/autour_one"
+        android:fontFamily="@font/source_serif_pro_semibold"
         android:background="@color/white"
         android:textCursorDrawable="@null"
         app:iconifiedByDefault="false"
