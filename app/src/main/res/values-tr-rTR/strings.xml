@@ -8,4 +8,5 @@
     <string name="update">Güncelle</string>
     <string name="my_note">Notlarım</string>
     <string name="edit_note">Notumu Düzenle</string>
+    <string name="empty_note">Notunuz bulunmamaktadır</string>
 </resources>

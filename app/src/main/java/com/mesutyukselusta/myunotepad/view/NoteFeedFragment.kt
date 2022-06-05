@@ -83,8 +83,15 @@ class NotepadFeedFragment : Fragment() {
         viewModel.noteListLiveData.observe(viewLifecycleOwner) { payers ->
 
             payers?.let {
-                recyclerView.visibility = View.VISIBLE
-                noteAdapter.updateNoteList(it)
+                if (it.isNotEmpty()){
+                    txtEmpty.visibility = View.GONE
+                    recyclerView.visibility = View.VISIBLE
+                    noteAdapter.updateNoteList(it)
+                } else {
+                    recyclerView.visibility = View.GONE
+                    txtEmpty.visibility = View.VISIBLE
+                }
+
             }
 
         }

@@ -9,4 +9,5 @@
     <string name="update">Update</string>
     <string name="my_note">My Notes</string>
     <string name="edit_note">Edit Note</string>
+    <string name="empty_note">You do not have any Note</string>
 </resources>
