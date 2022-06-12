@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.mesutyukselusta.myunotepad.model.Note
+import com.mesutyukselusta.myunotepad.model.Reminder
 
 @Database(entities = [
-    Note::class, ], version = 1 )
+    Note::class,Reminder::class ], version = 1 )
 
 abstract class NoteDatabase : RoomDatabase() {
     abstract fun noteDao () : NoteDao
@@ -25,6 +26,6 @@ abstract class NoteDatabase : RoomDatabase() {
         }
 
         private fun makeDatabase(context : Context) = Room.databaseBuilder(
-            context.applicationContext,NoteDatabase::class.java,"payerdatabase").build()
+            context.applicationContext,NoteDatabase::class.java,"notedatabase").build()
     }
 }

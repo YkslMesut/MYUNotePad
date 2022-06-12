@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/fragment_create_notepad.xml" value="0.23049452665547165" />
         <entry key="app/src/main/res/layout/fragment_edit_note.xml" value="0.15989583333333332" />
         <entry key="app/src/main/res/layout/fragment_notepad_feed.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/reminder_popup.xml" value="0.3145833333333333" />
         <entry key="app/src/main/res/layout/row_note.xml" value="0.14754098360655737" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.25" />
         <entry key="app/src/main/res/layout/toolbar_main.xml" value="0.2767210144927536" />

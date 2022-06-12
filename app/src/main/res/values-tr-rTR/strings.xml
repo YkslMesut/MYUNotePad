@@ -10,4 +10,9 @@
     <string name="edit_note">Notumu Düzenle</string>
     <string name="empty_note">Notunuz bulunmamaktadır</string>
     <string name="add_reminder">Hatırlatıcı Ekle</string>
+    <string name="date_and_time">Tarih ve Saat</string>
+    <string name="select">Seç</string>
+    <string name="your_message">Mesajınız</string>
+    <string name="add">Ekle</string>
+    <string name="set_reminder">Hatırlatıcını Düzenle</string>
 </resources>

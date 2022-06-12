@@ -50,6 +50,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -57,23 +58,23 @@
         android:visibility="visible"
         app:cardCornerRadius="10dp"
         app:cardElevation="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddReminder"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:layout_editor_absoluteX="10dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#fff"
             android:gravity="center"
-            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <EditText
-                android:layout_height="300dp"
                 android:id="@+id/etNoteDesc"
                 android:layout_width="match_parent"
+                android:layout_height="300dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/inknut_antiqua_semibold"
@@ -84,6 +85,18 @@
 
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/btnAddReminder"
+        android:layout_width="200dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:text="@string/add_reminder"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnUpdate"
