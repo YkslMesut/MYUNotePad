@@ -1,5 +1,6 @@
 package com.mesutyukselusta.myunotepad.view
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.SearchView
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mesutyukselusta.myunotepad.R
 import com.mesutyukselusta.myunotepad.adapter.NoteAdapter
 import com.mesutyukselusta.myunotepad.databinding.FragmentNotepadFeedBinding
+import com.mesutyukselusta.myunotepad.model.Note
 import com.mesutyukselusta.myunotepad.util.SwipeGesture
 import com.mesutyukselusta.myunotepad.viewmodel.NoteFeedViewModel
 import kotlinx.android.synthetic.main.fragment_notepad_feed.*
@@ -108,13 +110,12 @@ class NotepadFeedFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 when(direction){
                     ItemTouchHelper.LEFT ->{
-                        val item = noteAdapter.getNoteFromPosition(viewHolder.adapterPosition)
-                        viewModel.deleteNoteFromRoom(item.uuid)
+                        val deleteNoteFragment = deleteNoteFragment(viewHolder.position)
+                        deleteNoteFragment.show()
                     }
                     ItemTouchHelper.RIGHT ->{
-                        val item = noteAdapter.getNoteFromPosition(viewHolder.adapterPosition)
-                        viewModel.deleteNoteFromRoom(item.uuid)
-                    }
+                        val deleteNoteFragment = deleteNoteFragment(viewHolder.position)
+                        deleteNoteFragment.show()                    }
                 }
             }
         }
@@ -129,6 +130,23 @@ class NotepadFeedFragment : Fragment() {
             }
         })
 
+    }
+
+    private fun deleteNoteFragment(position : Int) : AlertDialog {
+        val alert = AlertDialog.Builder(requireContext())
+            .setMessage(getString(R.string.deleteMessage))
+            .setPositiveButton(getString(R.string.yes)) { dialog, which ->
+                val item = noteAdapter.getNoteFromPosition(position)
+                viewModel.deleteNoteFromRoom(item.uuid)
+                dialog.dismiss()
+            }
+            .setNegativeButton(getString(R.string.no)) { dialog, which ->
+                viewModel.getAllNotesFromRoom()
+                dialog.dismiss()
+            }
+            .create()
+
+        return alert
     }
 
 

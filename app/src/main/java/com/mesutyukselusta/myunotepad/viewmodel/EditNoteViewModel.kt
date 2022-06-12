@@ -9,6 +9,7 @@ import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
+import com.mesutyukselusta.myunotepad.R
 import com.mesutyukselusta.myunotepad.db.NoteDatabase
 import com.mesutyukselusta.myunotepad.model.Note
 import com.mesutyukselusta.myunotepad.model.Reminder
@@ -68,7 +69,9 @@ class EditNoteViewModel(application: Application) : BaseViewModel(application) {
         //Control have note got Reminder
         getReminderAndDoAction(reminderMessage,calendar.time.toString(),selectedNoteUuid)
 
-        Toast.makeText(context,"AlarmSetSuccesfully", Toast.LENGTH_LONG).show()
+        val successfullyMessage = context.getString(R.string.alarmSuccessfullyMessage)
+
+        Toast.makeText(context,successfullyMessage, Toast.LENGTH_LONG).show()
         reminderExistControl.value = true
         dialog.dismiss()
 

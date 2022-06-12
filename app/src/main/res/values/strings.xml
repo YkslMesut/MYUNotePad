@@ -16,4 +16,9 @@
     <string name="your_message">Your Message</string>
     <string name="add">Add</string>
     <string name="set_reminder">Set Your Reminder</string>
+    <string name="delete">Delete</string>
+    <string name="deleteMessage">Are you sure you want to delete your note ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="alarmSuccessfullyMessage">Alarm Set Successfully</string>
 </resources>

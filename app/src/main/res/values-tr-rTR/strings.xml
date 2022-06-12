@@ -15,4 +15,9 @@
     <string name="your_message">Mesajınız</string>
     <string name="add">Ekle</string>
     <string name="set_reminder">Hatırlatıcını Düzenle</string>
+    <string name="delete">Sil</string>
+    <string name="deleteMessage">Notunuzu silmek istediğinize emin misiniz ?</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="alarmSuccessfullyMessage">Alarmınız Kuruldu</string>
 </resources>
